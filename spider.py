@@ -72,14 +72,14 @@ savefile(data4,file_No)
 file_No = file_No + 1
 print(data4)
 
-#
-# #解析获取内容data2
-# soup = BeautifulSoup(data2,'html.parser',from_encoding='utf-8')
-# #清理多余的格式
-# [script.extract() for script in soup.findAll('script')]
-# [style.extract() for style in soup.findAll('style')]
-# Contents = soup.find_all('p')
-# for content in Contents:
-#     Save_data = content.prettify(formatter='html')
-#     savefile(Save_data,file_No)
-#     file_No = file_No +1
+
+#解析获取内容data2
+soup = BeautifulSoup(data2,'html.parser',from_encoding='utf-8')
+#清理多余的格式
+[script.extract() for script in soup.findAll('script')]
+[style.extract() for style in soup.findAll('style')]
+Contents = soup.find_all('p')
+for content in Contents:
+    Save_data = content.prettify(formatter='html')
+    savefile(Save_data,file_No)
+    file_No = file_No +1
